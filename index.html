@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BD区YZ中学 - 官方网站</title>
+    <title>某某区第一中学 - 官方网站</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,18 +14,19 @@
         }
         
         :root {
-            --primary-blue: #0056a6;
-            --secondary-blue: #0077cc;
-            --light-blue: #e6f2ff;
-            --accent-gold: #ffcc00;
-            --dark-gray: #333333;
-            --light-gray: #f5f5f5;
+            --light-red: #ffebee;
+            --primary-red: #ef5350;
+            --dark-red: #d32f2f;
+            --accent-red: #ff8a80;
+            --text-dark: #333333;
+            --text-light: #666666;
             --white: #ffffff;
+            --light-gray: #f5f5f5;
         }
         
         body {
             line-height: 1.6;
-            color: var(--dark-gray);
+            color: var(--text-dark);
             background-color: var(--white);
         }
         
@@ -39,16 +40,16 @@
         /* 头部样式 */
         header {
             background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(239, 83, 80, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         
         .header-top {
-            background-color: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
             color: var(--white);
-            padding: 10px 0;
+            padding: 12px 0;
             font-size: 0.9rem;
         }
         
@@ -59,22 +60,36 @@
         }
         
         .contact-info span {
-            margin-right: 20px;
+            margin-right: 25px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 8px;
         }
         
         .social-links a {
             color: var(--white);
-            margin-left: 15px;
+            margin-left: 20px;
             font-size: 1.1rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
         }
         
         .social-links a:hover {
-            color: var(--accent-gold);
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
         
         .main-header {
-            padding: 20px 0;
+            padding: 25px 0;
         }
         
         .logo-section {
@@ -83,70 +98,36 @@
         }
         
         .logo {
-            height: 70px;
-            margin-right: 15px;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            border-radius: 50%;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(239, 83, 80, 0.3);
         }
         
         .school-name h1 {
-            color: var(--primary-blue);
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+            color: var(--dark-red);
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         
         .school-name p {
-            color: var(--secondary-blue);
-            font-size: 1rem;
+            color: var(--primary-red);
+            font-size: 1.1rem;
+            font-weight: 500;
         }
         
-        /* 搜索框样式 */
-        .search-container {
+        /* 导航栏 */
+        nav {
             margin-left: auto;
-            display: flex;
-            align-items: center;
-        }
-        
-        .search-box {
-            position: relative;
-            width: 300px;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 10px 15px 10px 40px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-        
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 2px rgba(0, 86, 166, 0.2);
-        }
-        
-        .search-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #777;
-        }
-        
-        .search-btn {
-            background-color: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            margin-left: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-        
-        .search-btn:hover {
-            background-color: var(--secondary-blue);
         }
         
         nav ul {
@@ -155,25 +136,26 @@
         }
         
         nav ul li {
-            margin-left: 25px;
+            margin-left: 30px;
+            position: relative;
         }
         
         nav ul li a {
             text-decoration: none;
-            color: var(--dark-gray);
+            color: var(--text-dark);
             font-weight: 600;
             font-size: 1.1rem;
-            padding: 5px 0;
+            padding: 8px 0;
             position: relative;
             transition: color 0.3s;
         }
         
         nav ul li a:hover {
-            color: var(--primary-blue);
+            color: var(--primary-red);
         }
         
         nav ul li a.active {
-            color: var(--primary-blue);
+            color: var(--primary-red);
         }
         
         nav ul li a.active::after {
@@ -183,7 +165,8 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background-color: var(--accent-gold);
+            background-color: var(--primary-red);
+            border-radius: 2px;
         }
         
         .mobile-menu-btn {
@@ -191,158 +174,196 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--primary-blue);
+            color: var(--primary-red);
             cursor: pointer;
         }
         
-        /* 横幅/轮播图样式 */
+        /* 横幅样式 */
         .banner {
-            background: linear-gradient(rgba(0, 86, 166, 0.8), rgba(0, 119, 204, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(239, 83, 80, 0.85), rgba(211, 47, 47, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=70');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .banner h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            font-weight: 700;
         }
         
         .banner p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            margin: 0 auto 40px;
+            line-height: 1.8;
             max-width: 700px;
-            margin: 0 auto 30px;
         }
         
         .btn {
             display: inline-block;
-            background-color: var(--accent-gold);
-            color: var(--dark-gray);
-            padding: 12px 30px;
-            border-radius: 5px;
+            background-color: var(--white);
+            color: var(--primary-red);
+            padding: 15px 35px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .btn:hover {
-            background-color: #e6b800;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: var(--light-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         
         .btn-secondary {
             background-color: transparent;
             color: var(--white);
             border: 2px solid var(--white);
+            margin-left: 15px;
         }
         
         .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
         }
         
         /* 主要内容区域 */
         section {
-            padding: 70px 0;
+            padding: 80px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .section-title h2 {
-            color: var(--primary-blue);
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            color: var(--dark-red);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
+            font-weight: 700;
         }
         
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 70px;
+            width: 80px;
             height: 4px;
-            background-color: var(--accent-gold);
-            bottom: -10px;
+            background-color: var(--primary-red);
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
         }
         
         .section-title p {
-            color: #666;
+            color: var(--text-light);
             max-width: 600px;
-            margin: 0 auto;
+            margin: 30px auto 0;
+            font-size: 1.1rem;
         }
         
         /* 特色卡片 */
         .features {
-            background-color: var(--light-gray);
+            background-color: var(--light-red);
         }
         
         .feature-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
         
         .feature-card {
             background-color: var(--white);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 25px rgba(239, 83, 80, 0.1);
+            transition: all 0.4s;
+            border: 1px solid rgba(239, 83, 80, 0.1);
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(239, 83, 80, 0.15);
         }
         
         .feature-icon {
-            background-color: var(--light-blue);
-            color: var(--primary-blue);
-            font-size: 2.5rem;
-            height: 120px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            font-size: 2.8rem;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .feature-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .feature-content h3 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            color: var(--dark-red);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .feature-content p {
+            color: var(--text-light);
+            line-height: 1.7;
         }
         
         /* 新闻部分 */
         .news-container {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 40px;
+            gap: 50px;
         }
         
         .main-news {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
         }
         
         .news-item {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(239, 83, 80, 0.1);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .news-item:hover {
+            transform: translateX(5px);
         }
         
         .news-item:last-child {
@@ -351,63 +372,79 @@
         }
         
         .news-date {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-red);
             color: var(--white);
             display: inline-block;
-            padding: 5px 15px;
-            border-radius: 3px;
+            padding: 6px 18px;
+            border-radius: 20px;
             font-size: 0.9rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 500;
         }
         
         .news-item h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            line-height: 1.4;
         }
         
         .news-item h3 a {
-            color: var(--dark-gray);
+            color: var(--text-dark);
             text-decoration: none;
             transition: color 0.3s;
         }
         
         .news-item h3 a:hover {
-            color: var(--primary-blue);
+            color: var(--primary-red);
+        }
+        
+        .news-item p {
+            color: var(--text-light);
+            line-height: 1.7;
         }
         
         .sidebar {
-            background-color: var(--light-blue);
-            padding: 25px;
-            border-radius: 8px;
+            background-color: var(--light-red);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(239, 83, 80, 0.1);
         }
         
         .sidebar h3 {
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent-gold);
+            color: var(--dark-red);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-red);
+            font-size: 1.5rem;
+            font-weight: 600;
         }
         
         .quick-links li {
             list-style: none;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         
         .quick-links li a {
-            color: var(--dark-gray);
+            color: var(--text-dark);
             text-decoration: none;
             display: flex;
             align-items: center;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            padding: 10px 15px;
+            border-radius: 8px;
         }
         
         .quick-links li a:hover {
-            color: var(--primary-blue);
+            color: var(--primary-red);
+            background-color: rgba(239, 83, 80, 0.1);
+            transform: translateX(5px);
         }
         
         .quick-links li a i {
-            margin-right: 10px;
-            color: var(--secondary-blue);
+            margin-right: 12px;
+            color: var(--primary-red);
+            width: 20px;
+            text-align: center;
         }
         
         /* 通知部分 */
@@ -416,19 +453,30 @@
         }
         
         .notices {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             background-color: var(--white);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(239, 83, 80, 0.08);
+            border: 1px solid rgba(239, 83, 80, 0.1);
         }
         
         .notice-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(239, 83, 80, 0.1);
             display: flex;
             align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .notice-item:hover {
+            background-color: var(--light-red);
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: -15px;
+            margin-right: -15px;
+            border-radius: 8px;
         }
         
         .notice-item:last-child {
@@ -436,155 +484,109 @@
         }
         
         .notice-badge {
-            background-color: #ff6b6b;
+            background-color: var(--primary-red);
             color: white;
-            font-size: 0.8rem;
-            padding: 3px 10px;
+            font-size: 0.85rem;
+            padding: 5px 15px;
             border-radius: 20px;
-            margin-right: 15px;
+            margin-right: 20px;
+            font-weight: 500;
         }
         
         .notice-badge.important {
-            background-color: #ff6b6b;
+            background-color: var(--dark-red);
         }
         
         .notice-badge.general {
-            background-color: var(--secondary-blue);
-        }
-        
-        /* 模态框样式 */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            animation: fadeIn 0.3s;
-        }
-        
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 30px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            animation: slideDown 0.4s;
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #777;
-            transition: color 0.3s;
-        }
-        
-        .close-modal:hover {
-            color: var(--primary-blue);
-        }
-        
-        .search-result {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: var(--light-blue);
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-blue);
-        }
-        
-        .search-result h3 {
-            color: var(--primary-blue);
-            margin-bottom: 10px;
-        }
-        
-        .hidden-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--secondary-blue);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        .hidden-link:hover {
-            color: var(--primary-blue);
-            text-decoration: underline;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            background-color: var(--accent-red);
         }
         
         /* 页脚样式 */
         footer {
-            background-color: var(--dark-gray);
+            background: linear-gradient(135deg, var(--dark-red), #b71c1c);
             color: var(--white);
-            padding-top: 60px;
+            padding-top: 70px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
         
-        .footer-logo img {
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo .logo {
+            width: 70px;
             height: 70px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-red);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo h3 {
+            color: var(--white);
+            font-size: 1.5rem;
             margin-bottom: 15px;
+        }
+        
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
         }
         
         .footer-links h3, .footer-contact h3 {
             color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
         
         .footer-links ul li {
             list-style: none;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-links ul li a {
-            color: #bbb;
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s;
+            display: inline-block;
         }
         
         .footer-links ul li a:hover {
-            color: var(--accent-gold);
+            color: var(--white);
+            transform: translateX(5px);
         }
         
         .footer-contact p {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .footer-contact i {
-            margin-right: 10px;
-            color: var(--accent-gold);
+            margin-right: 15px;
+            color: var(--accent-red);
+            margin-top: 3px;
         }
         
         .copyright {
-            background-color: #222;
-            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 25px 0;
             text-align: center;
-            color: #aaa;
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
         }
         
         /* 响应式设计 */
@@ -593,8 +595,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .search-box {
-                width: 250px;
+            .banner h2 {
+                font-size: 2.8rem;
             }
         }
         
@@ -608,15 +610,8 @@
                 margin-bottom: 10px;
             }
             
-            .search-container {
-                margin: 20px auto 0;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .search-box {
-                width: 100%;
-                max-width: 400px;
+            .social-links {
+                margin-top: 10px;
             }
             
             nav ul {
@@ -627,8 +622,9 @@
                 width: 100%;
                 background-color: var(--white);
                 flex-direction: column;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                 padding: 20px 0;
+                z-index: 1000;
             }
             
             nav ul.show {
@@ -638,25 +634,45 @@
             nav ul li {
                 margin: 0;
                 text-align: center;
-                padding: 10px 0;
+                padding: 12px 0;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 10px 20px;
             }
             
             .mobile-menu-btn {
                 display: block;
             }
             
+            .banner {
+                padding: 80px 0;
+            }
+            
             .banner h2 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
             
             .banner p {
-                font-size: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 80%;
+                margin: 0 auto 15px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
             }
         }
         
         @media (max-width: 576px) {
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .feature-cards {
@@ -667,17 +683,20 @@
                 grid-template-columns: 1fr;
             }
             
-            .modal-content {
-                width: 95%;
-                padding: 20px;
+            .notices {
+                padding: 25px;
+            }
+            
+            section {
+                padding: 60px 0;
             }
             
             .banner {
                 padding: 60px 0;
             }
             
-            section {
-                padding: 50px 0;
+            .school-name h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -688,8 +707,8 @@
         <div class="header-top">
             <div class="container">
                 <div class="contact-info">
-                    <span><i class="fas fa-phone-alt"></i> 电话: (010) 6634-1810</span>
-                    <span><i class="fas fa-envelope"></i> 邮箱: office@bdyz.edu.cn</span>
+                    <span><i class="fas fa-phone-alt"></i> 电话: (000) 1234-5678</span>
+                    <span><i class="fas fa-envelope"></i> 邮箱: office@某某一中.edu.cn</span>
                 </div>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-weixin"></i></a>
@@ -703,26 +722,12 @@
             <div class="container">
                 <div class="logo-section">
                     <div class="logo">
-                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="70" height="70" rx="10" fill="#0056A6"/>
-                            <path d="M35 20L50 40H20L35 20Z" fill="#FFCC00"/>
-                            <circle cx="35" cy="50" r="8" fill="#FFCC00"/>
-                            <path d="M30 35H40" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
+                        <i class="fas fa-school"></i>
                     </div>
                     <div class="school-name">
-                        <h1>BD区YZ中学</h1>
-                        <p>博学笃行 · 明德致远</p>
+                        <h1>某某区第一中学</h1>
+                        <p>厚德博学 · 追求卓越</p>
                     </div>
-                </div>
-                
-                <!-- 搜索框 -->
-                <div class="search-container">
-                    <div class="search-box">
-                        <i class="fas fa-search search-icon"></i>
-                        <input type="text" id="searchInput" placeholder="搜索网站内容...">
-                    </div>
-                    <button class="search-btn" id="searchBtn">搜索</button>
                 </div>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -744,13 +749,15 @@
         </div>
     </header>
 
-    <!-- 横幅/轮播图 -->
+    <!-- 横幅 -->
     <section class="banner">
         <div class="container">
-            <h2>厚德博学，追求卓越</h2>
-            <p>BD区YZ中学创建于1952年，是一所历史悠久、底蕴深厚的省级示范性高中。学校秉承"以人为本，全面发展"的办学理念，致力于培养具有家国情怀和国际视野的优秀人才。</p>
-            <a href="#" class="btn">了解更多</a>
-            <a href="#" class="btn btn-secondary">参观校园</a>
+            <div class="banner-content">
+                <h2>欢迎来到某某区第一中学</h2>
+                <p>某某区第一中学创建于1952年，是一所历史悠久、底蕴深厚的省级示范性高中。学校秉承"以人为本，全面发展"的办学理念，致力于培养具有家国情怀和国际视野的优秀人才。</p>
+                <a href="#" class="btn">了解更多</a>
+                <a href="#" class="btn btn-secondary">校园导览</a>
+            </div>
         </div>
     </section>
 
@@ -779,7 +786,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>优秀的师资队伍</h3>
-                        <p>拥有特级教师15名，高级教师占比65%，硕士研究生以上学历教师达85%。教师团队多次获得国家级教学奖项。</p>
+                        <p>拥有特级教师18名，高级教师占比68%，硕士研究生以上学历教师达82%。教师团队多次获得国家级教学奖项。</p>
                     </div>
                 </div>
                 
@@ -808,13 +815,13 @@
                 <div class="main-news">
                     <div class="news-item">
                         <div class="news-date">2024年10月15日</div>
-                        <h3><a href="#" id="liutianqing-link">我校学生在全市数学竞赛中荣获一等奖</a></h3>
-                        <p>在刚刚结束的全市中学生数学竞赛中，我校高二(3)班同学<strong>刘天清</strong>荣获一等奖，指导教师董新飞获得优秀指导教师奖。</p>
+                        <h3><a href="#">我校学生在全市数学竞赛中荣获一等奖</a></h3>
+                        <p>在刚刚结束的全市中学生数学竞赛中，我校高二(3)班同学刘天清荣获一等奖，指导教师董新飞获得优秀指导教师奖。</p>
                     </div>
                     
                     <div class="news-item">
                         <div class="news-date">2024年10月10日</div>
-                        <h3><a href="#">BDYZ秋季运动会圆满落幕</a></h3>
+                        <h3><a href="#">某某一中秋季运动会圆满落幕</a></h3>
                         <p>为期三天的秋季运动会在全校师生的热情参与下圆满结束。本次运动会共有12个项目打破校纪录，展现了学生们良好的体育素养。</p>
                     </div>
                     
@@ -826,7 +833,7 @@
                     
                     <div class="news-item">
                         <div class="news-date">2024年9月28日</div>
-                        <h3><a href="#">BDYZ举办"国庆"文艺汇演</a></h3>
+                        <h3><a href="#">某某一中举办"国庆"文艺汇演</a></h3>
                         <p>为庆祝国庆节，我校举办了丰富多彩的"国庆"文艺汇演活动，师生同台演出，展现了我校艺术教育的丰硕成果。</p>
                     </div>
                 </div>
@@ -836,9 +843,9 @@
                     <ul class="quick-links">
                         <li><a href="#"><i class="fas fa-calendar-alt"></i> 校历安排</a></li>
                         <li><a href="#"><i class="fas fa-file-alt"></i> 招生简章</a></li>
-                        <li><a href="#" id="grade-query-link"><i class="fas fa-chart-line"></i> 成绩查询</a></li>
+                        <li><a href="#"><i class="fas fa-chart-line"></i> 成绩查询</a></li>
                         <li><a href="#"><i class="fas fa-book"></i> 数字图书馆</a></li>
-                        <li><a href="#" id="alumni-link"><i class="fas fa-user-graduate"></i> 校友会</a></li>
+                        <li><a href="#"><i class="fas fa-user-graduate"></i> 校友会</a></li>
                         <li><a href="#"><i class="fas fa-newspaper"></i> 校报在线阅读</a></li>
                     </ul>
                 </div>
@@ -857,7 +864,7 @@
             <div class="notices">
                 <div class="notice-item">
                     <span class="notice-badge important">重要</span>
-                    <span>2025年BDYZ艺术特长生招生简章发布</span>
+                    <span>2025年某某一中艺术特长生招生简章发布</span>
                 </div>
                 
                 <div class="notice-item">
@@ -867,7 +874,7 @@
                 
                 <div class="notice-item">
                     <span class="notice-badge important">重要</span>
-                    <span>BDYZ冬季校园安全教育活动周安排</span>
+                    <span>某某一中冬季校园安全教育活动周安排</span>
                 </div>
                 
                 <div class="notice-item">
@@ -877,36 +884,22 @@
                 
                 <div class="notice-item">
                     <span class="notice-badge important">重要</span>
-                    <span id="strange-notice">关于旧实验楼维修期间禁止进入的通知</span>
+                    <span>关于校园基础设施升级改造的公告</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 搜索模态框 -->
-    <div id="searchModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h2>搜索结果</h2>
-            <div id="searchResults">
-                <!-- 搜索结果将在这里显示 -->
-            </div>
-        </div>
-    </div>
 
     <!-- 页脚 -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="70" height="70" rx="10" fill="#FFCC00"/>
-                        <path d="M35 20L50 40H20L35 20Z" fill="#0056A6"/>
-                        <circle cx="35" cy="50" r="8" fill="#0056A6"/>
-                        <path d="M30 35H40" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                    <h3>BDYZ中学</h3>
-                    <p>厚德博学，追求卓越</p>
+                    <div class="logo">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>某某区第一中学</h3>
+                    <p>厚德博学，追求卓越，培养具有家国情怀和国际视野的优秀人才。</p>
                 </div>
                 
                 <div class="footer-links">
@@ -922,17 +915,17 @@
                 
                 <div class="footer-contact">
                     <h3>联系我们</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 地址: 北京市BD区教育路123号</p>
-                    <p><i class="fas fa-phone-alt"></i> 电话: (010) 6634-1810</p>
-                    <p><i class="fas fa-fax"></i> 传真: (010) 6634-1811</p>
-                    <p><i class="fas fa-envelope"></i> 邮箱: info@bdyz.edu.cn</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 地址: 某某区教育路123号</p>
+                    <p><i class="fas fa-phone-alt"></i> 电话: (000) 1234-5678</p>
+                    <p><i class="fas fa-fax"></i> 传真: (000) 1234-5679</p>
+                    <p><i class="fas fa-envelope"></i> 邮箱: info@某某一中.edu.cn</p>
                 </div>
             </div>
         </div>
         
         <div class="copyright">
             <div class="container">
-                <p>© 2024 BDYZ中学 版权所有 | 京ICP备202410151号</p>
+                <p>© 2024 某某区第一中学 版权所有 | 某某ICP备202410151号</p>
                 <p>本网站建议使用Chrome、Firefox、Edge等现代浏览器访问</p>
             </div>
         </div>
@@ -955,134 +948,62 @@
             }
         });
         
-        // 搜索功能
-        const searchInput = document.getElementById('searchInput');
-        const searchBtn = document.getElementById('searchBtn');
-        const searchModal = document.getElementById('searchModal');
-        const closeModal = document.getElementById('closeModal');
-        const searchResults = document.getElementById('searchResults');
-        
-        // 搜索关键词与结果的映射
-        const searchData = {
-            "刘天清": {
-                title: "关于刘天清同学的获奖记录",
-                content: "刘天清，高二(3)班学生，在2024年全市数学竞赛中获得一等奖。该生平时学习认真，逻辑思维能力强，是数学竞赛小组的核心成员。",
-                hiddenLink: "liutianqing_details.html",
-                linkText: "查看详细档案"
-            },
-            "旧实验楼": {
-                title: "旧实验楼维修通知详情",
-                content: "因建筑结构安全问题，旧实验楼自2024年9月15日起进行全面封闭维修，预计工期6个月。维修期间，所有师生禁止进入该区域。",
-                hiddenLink: "old_lab_building.html",
-                linkText: "查看维修进展报告"
-            },
-            "成绩查询": {
-                title: "学生成绩查询系统",
-                content: "校内成绩查询系统需使用学号和身份证后六位登录。请注意，系统仅显示当前学期成绩，历史成绩需向教务处申请查询。",
-                hiddenLink: "grade_system_info.html",
-                linkText: "访问查询系统（需内网）"
-            },
-            "校友会": {
-                title: "YZ中学校友会",
-                content: "校友会成立于1995年，旨在加强校友之间的联系与合作。2024年度校友聚会原定于10月举行，但因故推迟，具体时间待定。",
-                hiddenLink: "alumni_meeting.html",
-                linkText: "查看校友会历史活动"
-            }
-        };
-        
-        // 处理搜索
-        function performSearch() {
-            const query = searchInput.value.trim().toLowerCase();
-            let found = false;
-            
-            // 清空之前的结果
-            searchResults.innerHTML = '';
-            
-            // 检查是否有匹配的关键词
-            for (const [keyword, data] of Object.entries(searchData)) {
-                if (query.includes(keyword.toLowerCase())) {
-                    found = true;
-                    searchResults.innerHTML = `
-                        <div class="search-result">
-                            <h3>${data.title}</h3>
-                            <p>${data.content}</p>
-                            <a href="${data.hiddenLink}" class="hidden-link" target="_blank">${data.linkText}</a>
-                        </div>
-                    `;
-                    break;
+        // 点击菜单项后关闭移动菜单
+        const menuItems = document.querySelectorAll('#mainMenu a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const menu = document.getElementById('mainMenu');
+                if (menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                    const menuBtnIcon = document.querySelector('#mobileMenuBtn i');
+                    menuBtnIcon.classList.remove('fa-times');
+                    menuBtnIcon.classList.add('fa-bars');
                 }
-            }
-            
-            // 如果没有找到匹配项
-            if (!found) {
-                searchResults.innerHTML = `
-                    <div class="search-result">
-                        <h3>未找到相关结果</h3>
-                        <p>没有找到与"${query}"相关的内容。请尝试其他关键词，如"刘天清"、"旧实验楼"、"成绩查询"或"校友会"。</p>
-                    </div>
-                `;
-            }
-            
-            // 显示模态框
-            searchModal.style.display = 'block';
-        }
-        
-        // 搜索按钮点击事件
-        searchBtn.addEventListener('click', performSearch);
-        
-        // 按Enter键搜索
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
-        });
-        
-        // 关闭模态框
-        closeModal.addEventListener('click', function() {
-            searchModal.style.display = 'none';
-        });
-        
-        // 点击模态框外部关闭
-        window.addEventListener('click', function(e) {
-            if (e.target === searchModal) {
-                searchModal.style.display = 'none';
-            }
+            });
         });
         
         // 页面加载完成后
         document.addEventListener('DOMContentLoaded', function() {
             // 更新版权年份
-            const yearSpan = document.querySelector('.copyright p');
-            if (yearSpan) {
+            const yearSpans = document.querySelectorAll('.copyright p');
+            if (yearSpans.length > 0) {
                 const currentYear = new Date().getFullYear();
-                yearSpan.innerHTML = yearSpan.innerHTML.replace('2024', currentYear);
+                yearSpans[0].innerHTML = yearSpans[0].innerHTML.replace('2024', currentYear);
             }
             
-            // 为新闻链接添加点击事件（示例）
-            document.getElementById('liutianqing-link').addEventListener('click', function(e) {
-                e.preventDefault();
-                searchInput.value = '刘天清';
-                performSearch();
+            // 为新闻项添加悬停效果
+            const newsItems = document.querySelectorAll('.news-item');
+            newsItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(10px)';
+                    this.style.transition = 'transform 0.3s';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
             });
             
-            // 为快速链接添加点击事件（示例）
-            document.getElementById('grade-query-link').addEventListener('click', function(e) {
-                e.preventDefault();
-                searchInput.value = '成绩查询';
-                performSearch();
+            // 为特色卡片添加点击效果
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-15px)';
+                    }, 300);
+                });
             });
-            
-            document.getElementById('alumni-link').addEventListener('click', function(e) {
-                e.preventDefault();
-                searchInput.value = '校友会';
-                performSearch();
-            });
-            
-            // 为通知添加点击事件
-            document.getElementById('strange-notice').addEventListener('click', function() {
-                searchInput.value = '旧实验楼';
-                performSearch();
-            });
+        });
+        
+        // 滚动时改变头部透明度
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(239, 83, 80, 0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(239, 83, 80, 0.1)';
+            }
         });
     </script>
 </body>
