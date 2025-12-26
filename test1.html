@@ -3,63 +3,621 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>测试页面1 - 某某区第一中学</title>
-    <!-- 使用相同的样式 -->
+    <title>学校概况 - 某某区第一中学</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 复制 index.html 的样式，或创建单独的CSS文件 */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background: #ffebee; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .test-header { 
-            background: linear-gradient(135deg, #ef5350, #d32f2f);
-            color: white; padding: 60px 0; text-align: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
-        .content { background: white; padding: 40px; margin: 40px 0; border-radius: 10px; }
-        .back-btn { 
-            display: inline-block; 
-            background: #d32f2f; 
-            color: white; 
-            padding: 10px 25px; 
-            border-radius: 25px; 
-            text-decoration: none; 
-            margin-top: 20px;
+        
+        :root {
+            --light-red: #ffebee;
+            --primary-red: #ef5350;
+            --dark-red: #d32f2f;
+            --accent-red: #ff8a80;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+        }
+        
+        body {
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部样式 */
+        .page-header {
+            background: linear-gradient(rgba(211, 47, 47, 0.9), rgba(239, 83, 80, 0.9)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0 80px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-red);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 30px;
+            transition: all 0.3s;
+            border: 2px solid var(--white);
+        }
+        
+        .back-btn:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+        
+        /* 主要内容区域 */
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            color: var(--dark-red);
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-red);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-red);
+            bottom: -3px;
+            left: 0;
+        }
+        
+        /* 基本信息卡片 */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .info-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(239, 83, 80, 0.1);
+            border: 1px solid rgba(239, 83, 80, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .info-card h3 {
+            color: var(--dark-red);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-card h3 i {
+            margin-right: 12px;
+            color: var(--primary-red);
+        }
+        
+        .info-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            color: var(--dark-red);
+            font-weight: 600;
+        }
+        
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-red);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 50px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 50px;
+        }
+        
+        .timeline-content {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--dark-red);
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: var(--dark-red);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* 师资队伍 */
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .teacher-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .teacher-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .teacher-icon {
+            background-color: var(--light-red);
+            color: var(--primary-red);
+            font-size: 2.5rem;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .teacher-info {
+            padding: 25px;
+        }
+        
+        .teacher-info h4 {
+            color: var(--dark-red);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* 荣誉展示 */
+        .honors-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .honor-item {
+            background-color: var(--light-red);
+            border-left: 4px solid var(--primary-red);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .honor-year {
+            font-weight: 600;
+            color: var(--dark-red);
+            margin-bottom: 8px;
+        }
+        
+        /* 校园环境 */
+        .campus-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .campus-photo {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-weight: 600;
+        }
+        
+        /* 页脚样式 */
+        .page-footer {
+            background-color: var(--dark-red);
+            color: var(--white);
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-right: 20px;
+                padding-left: 70px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .honors-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .teachers-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="test-header">
+    <!-- 页面头部 -->
+    <header class="page-header">
         <div class="container">
-            <h1>🧪 测试页面1</h1>
-            <p>某某区第一中学 - 功能测试页面</p>
+            <h1><i class="fas fa-school"></i> 学校概况</h1>
+            <p>某某区第一中学 - 百年传承，追求卓越</p>
             <a href="index.html" class="back-btn">
                 <i class="fas fa-arrow-left"></i> 返回官网首页
             </a>
         </div>
     </header>
-    
+
     <main class="container">
-        <div class="content">
-            <h2>页面内容示例</h2>
-            <p>这是一个测试页面，用于演示页面跳转功能。</p>
+        <!-- 基本信息 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> 学校简介</h2>
             
-            <h3>测试功能列表</h3>
-            <ul>
-                <li>页面跳转测试 ✓</li>
-                <li>样式一致性测试 ✓</li>
-                <li>响应式布局测试</li>
-                <li>交互功能测试</li>
-            </ul>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3><i class="fas fa-history"></i> 历史沿革</h3>
+                    <p><span class="highlight">某某区第一中学</span>始建于<span class="highlight">1920年</span>，原名<span class="highlight">宝蓟中学</span>，2001年更名为现名。</p>
+                    <p>学校拥有<span class="highlight">百年办学历史</span>，是区域内办学历史最悠久的高级中学之一。</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> 校园概况</h3>
+                    <p>学校占地<span class="highlight">330亩</span>，建筑面积<span class="highlight">8万平方米</span>。</p>
+                    <p>现有<span class="highlight">74个教学班</span>，在校学生<span class="highlight">3000余人</span>。</p>
+                    <p>校园环境优美，设施先进，是省级<span class="highlight">园林式单位</span>。</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-user-tie"></i> 领导班子</h3>
+                    <p><span class="highlight">校长：</span>李建东</p>
+                    <p><span class="highlight">党委书记：</span>郭树超</p>
+                    <p>办学理念：<span class="highlight">"以人为本，为学生终身发展奠基；科研兴校，为教师专业成长服务"</span></p>
+                </div>
+            </div>
             
-            <div style="margin-top: 30px;">
-                <a href="index.html" class="back-btn">返回首页</a>
-                <a href="#next" class="back-btn" style="background: #666; margin-left: 10px;">下一页</a>
+            <div class="info-card" style="margin-top: 20px;">
+                <h3><i class="fas fa-graduation-cap"></i> 校训与荣誉</h3>
+                <p><span class="highlight">校训：</span>"德泽、敬学、立远"</p>
+                <p><span class="highlight">学校性质：</span>天津市首批重点中学、示范性高中、新课程改革样板校</p>
+                <p><span class="highlight">荣誉称号：</span>2009年获"全国教育系统先进集体"称号</p>
+            </div>
+        </section>
+
+        <!-- 发展历程 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-timeline"></i> 发展历程</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1920年</div>
+                        <p>学校创立，原名"宝蓟中学"，开启区域中等教育先河。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1950年</div>
+                        <p>确定为省重点中学，开始规模化发展。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2001年</div>
+                        <p>更名为"某某区第一中学"，开启现代化办学新篇章。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2009年</div>
+                        <p>荣获"全国教育系统先进集体"称号。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021年</div>
+                        <p>成为省级品牌高中建设项目培育学校。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024年</div>
+                        <p>被授予"清华大学优质生源校"和"北京大学博雅人才共育基地"称号。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 师资力量 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> 师资队伍</h2>
+            
+            <p style="margin-bottom: 30px; color: var(--text-light); line-height: 1.7;">
+                学校现有教职工<span class="highlight">312人</span>，其中<span class="highlight">特级教师8人</span>，高级教师占比超过<span class="highlight">65%</span>，硕士研究生以上学历教师达<span class="highlight">85%</span>。形成了一支结构合理、业务精湛、师德高尚的教师队伍。
+            </p>
+            
+            <div class="teachers-grid">
+                <div class="teacher-item">
+                    <div class="teacher-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="teacher-info">
+                        <h4>特级教师团队</h4>
+                        <p>8名特级教师引领各学科教学研究，享受国务院特殊津贴专家2人。</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-item">
+                    <div class="teacher-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="teacher-info">
+                        <h4>高级教师队伍</h4>
+                        <p>高级教师占比65%，市级学科带头人15人，区级骨干教师42人。</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-item">
+                    <div class="teacher-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="teacher-info">
+                        <h4>科研能力</h4>
+                        <p>近三年承担国家级课题5项，省级课题12项，发表核心期刊论文80余篇。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 办学成果 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> 办学成果</h2>
+            
+            <div class="honors-list">
+                <div class="honor-item">
+                    <div class="honor-year">2024年</div>
+                    <p>6名学生获全国中学生奥林匹克竞赛一等奖，其中2人进入国家集训队。</p>
+                </div>
+                
+                <div class="honor-item">
+                    <div class="honor-year">2023年</div>
+                    <p>高考重点大学录取率达92%，15名学生被清华大学、北京大学录取。</p>
+                </div>
+                
+                <div class="honor-item">
+                    <div class="honor-year">2022年</div>
+                    <p>学生合唱团荣获全国中学生艺术展演一等奖。</p>
+                </div>
+                
+                <div class="honor-item">
+                    <div class="honor-year">2021年</div>
+                    <p>成为省级品牌高中建设项目培育学校。</p>
+                </div>
+                
+                <div class="honor-item">
+                    <div class="honor-year">2020年</div>
+                    <p>学生合唱团入选省级优秀学生艺术团。</p>
+                </div>
+                
+                <div class="honor-item">
+                    <div class="honor-year">2009年</div>
+                    <p>荣获"全国教育系统先进集体"称号。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 知名校友 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-user-friends"></i> 知名校友</h2>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-user-graduate"></i> 张金松 校友</h3>
+                <p><span class="highlight">成就：</span>量子反常霍尔效应发现者之一，国际著名物理学家。</p>
+                <p><span class="highlight">毕业年份：</span>1998年</p>
+                <p><span class="highlight">现职：</span>清华大学物理系教授，中国科学院院士</p>
+            </div>
+            
+            <p style="margin-top: 20px; color: var(--text-light);">
+                建校百年来，学校培养了数万名优秀毕业生，遍布海内外各行各业，其中<span class="highlight">两院院士5人</span>，省部级以上领导干部<span class="highlight">12人</span>，知名企业家<span class="highlight">30余人</span>，形成了广泛的社会影响力。
+            </p>
+        </section>
+
+        <!-- 校园环境 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-tree"></i> 校园环境</h2>
+            
+            <p style="margin-bottom: 30px; color: var(--text-light);">
+                学校占地330亩，拥有现代化的教学楼、实验楼、图书馆、体育馆、艺术中心和学生公寓。校园绿树成荫，环境优美，被评为"省级园林式单位"。
+            </p>
+            
+            <div class="campus-gallery">
+                <div class="campus-photo">教学楼</div>
+                <div class="campus-photo">图书馆</div>
+                <div class="campus-photo">体育馆</div>
+                <div class="campus-photo">艺术中心</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <a href="about.html">学校概况</a>
+                <a href="#">教育教学</a>
+                <a href="#">招生信息</a>
+                <a href="#">联系我们</a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 某某区第一中学 版权所有 | 某某ICP备202410151号</p>
+                <p>地址：某某区教育路123号 | 电话：(000) 1234-5678</p>
             </div>
         </div>
-    </main>
-    
-    <footer style="text-align: center; padding: 20px; color: #666;">
-        <p>© 2024 某某区第一中学 - 测试页面</p>
     </footer>
+
+    <script>
+        // 简单交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为时间轴项添加动画
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = (index * 0.1) + 's';
+                observer.observe(item);
+            });
+            
+            // 更新年份
+            const yearSpan = document.querySelector('.copyright p');
+            if (yearSpan) {
+                const currentYear = new Date().getFullYear();
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2024', currentYear);
+            }
+        });
+    </script>
 </body>
 </html>
