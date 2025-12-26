@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试页面1 - 某某区第一中学</title>
+    <!-- 使用相同的样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 复制 index.html 的样式，或创建单独的CSS文件 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #ffebee; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .test-header { 
+            background: linear-gradient(135deg, #ef5350, #d32f2f);
+            color: white; padding: 60px 0; text-align: center;
+        }
+        .content { background: white; padding: 40px; margin: 40px 0; border-radius: 10px; }
+        .back-btn { 
+            display: inline-block; 
+            background: #d32f2f; 
+            color: white; 
+            padding: 10px 25px; 
+            border-radius: 25px; 
+            text-decoration: none; 
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="test-header">
+        <div class="container">
+            <h1>🧪 测试页面1</h1>
+            <p>某某区第一中学 - 功能测试页面</p>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回官网首页
+            </a>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="content">
+            <h2>页面内容示例</h2>
+            <p>这是一个测试页面，用于演示页面跳转功能。</p>
+            
+            <h3>测试功能列表</h3>
+            <ul>
+                <li>页面跳转测试 ✓</li>
+                <li>样式一致性测试 ✓</li>
+                <li>响应式布局测试</li>
+                <li>交互功能测试</li>
+            </ul>
+            
+            <div style="margin-top: 30px;">
+                <a href="index.html" class="back-btn">返回首页</a>
+                <a href="#next" class="back-btn" style="background: #666; margin-left: 10px;">下一页</a>
+            </div>
+        </div>
+    </main>
+    
+    <footer style="text-align: center; padding: 20px; color: #666;">
+        <p>© 2024 某某区第一中学 - 测试页面</p>
+    </footer>
+</body>
+</html>
