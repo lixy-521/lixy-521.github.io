@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDYZ中学 - 官方网站</title>
+    <title>BD区YZ中学 - 官方网站</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -96,6 +96,57 @@
         .school-name p {
             color: var(--secondary-blue);
             font-size: 1rem;
+        }
+        
+        /* 搜索框样式 */
+        .search-container {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+            width: 300px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 2px rgba(0, 86, 166, 0.2);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+        
+        .search-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .search-btn:hover {
+            background-color: var(--secondary-blue);
         }
         
         nav ul {
@@ -401,6 +452,82 @@
             background-color: var(--secondary-blue);
         }
         
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: slideDown 0.4s;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary-blue);
+        }
+        
+        .search-result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .search-result h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        .hidden-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--secondary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .hidden-link:hover {
+            color: var(--primary-blue);
+            text-decoration: underline;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
         /* 页脚样式 */
         footer {
             background-color: var(--dark-gray);
@@ -465,6 +592,10 @@
             .news-container {
                 grid-template-columns: 1fr;
             }
+            
+            .search-box {
+                width: 250px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -475,6 +606,17 @@
             
             .contact-info {
                 margin-bottom: 10px;
+            }
+            
+            .search-container {
+                margin: 20px auto 0;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .search-box {
+                width: 100%;
+                max-width: 400px;
             }
             
             nav ul {
@@ -525,6 +667,11 @@
                 grid-template-columns: 1fr;
             }
             
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+            
             .banner {
                 padding: 60px 0;
             }
@@ -541,8 +688,8 @@
         <div class="header-top">
             <div class="container">
                 <div class="contact-info">
-                    <span><i class="fas fa-phone-alt"></i> 电话: 123</span>
-                    <span><i class="fas fa-envelope"></i> 邮箱: 123</span>
+                    <span><i class="fas fa-phone-alt"></i> 电话: (010) 6634-1810</span>
+                    <span><i class="fas fa-envelope"></i> 邮箱: office@bdyz.edu.cn</span>
                 </div>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-weixin"></i></a>
@@ -565,8 +712,17 @@
                     </div>
                     <div class="school-name">
                         <h1>BD区YZ中学</h1>
-                        <p>B-D-Y-Z</p>
+                        <p>博学笃行 · 明德致远</p>
                     </div>
+                </div>
+                
+                <!-- 搜索框 -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="搜索网站内容...">
+                    </div>
+                    <button class="search-btn" id="searchBtn">搜索</button>
                 </div>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -591,8 +747,8 @@
     <!-- 横幅/轮播图 -->
     <section class="banner">
         <div class="container">
-            <h2>厚**发，追求卓越</h2>
-            <p>BDYZ是一个极为伟大的学校</p>
+            <h2>厚德博学，追求卓越</h2>
+            <p>BD区YZ中学创建于1952年，是一所历史悠久、底蕴深厚的省级示范性高中。学校秉承"以人为本，全面发展"的办学理念，致力于培养具有家国情怀和国际视野的优秀人才。</p>
             <a href="#" class="btn">了解更多</a>
             <a href="#" class="btn btn-secondary">参观校园</a>
         </div>
@@ -613,7 +769,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>卓越的教学质量</h3>
-                        <p>连续多年高考本科上线率达200%以上，重点大学录取率稳居全市前列。多名学生被清华、北大等顶尖高校录取。</p>
+                        <p>连续多年高考本科上线率达98%以上，重点大学录取率稳居全市前列。多名学生被清华、北大等顶尖高校录取。</p>
                     </div>
                 </div>
                 
@@ -623,7 +779,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>优秀的师资队伍</h3>
-                        <p>拥有特级教师100名，高级教师占比365%，硕士研究生以上学历教师达885%。教师团队多次获得宇宙级教学奖项。</p>
+                        <p>拥有特级教师15名，高级教师占比65%，硕士研究生以上学历教师达85%。教师团队多次获得国家级教学奖项。</p>
                     </div>
                 </div>
                 
@@ -651,27 +807,27 @@
             <div class="news-container">
                 <div class="main-news">
                     <div class="news-item">
-                        <div class="news-date">2047年10月15日</div>
-                        <h3><a href="#">我校学生在全宇宙数学竞赛中荣获一等奖</a></h3>
-                        <p>在刚刚结束的全宇宙中学生数学竞赛中，我校同学刘天清荣获一等奖，指导教师董新飞获得优秀指导教师奖。</p>
+                        <div class="news-date">2024年10月15日</div>
+                        <h3><a href="#" id="liutianqing-link">我校学生在全市数学竞赛中荣获一等奖</a></h3>
+                        <p>在刚刚结束的全市中学生数学竞赛中，我校高二(3)班同学<strong>刘天清</strong>荣获一等奖，指导教师董新飞获得优秀指导教师奖。</p>
                     </div>
                     
                     <div class="news-item">
-                        <div class="news-date">2047年10月10日</div>
+                        <div class="news-date">2024年10月10日</div>
                         <h3><a href="#">BDYZ秋季运动会圆满落幕</a></h3>
-                        <p>为期两年的秋季运动会在全校师生的热情参与下圆满结束。本次运动会共有0个项目打破校纪录，展现了学生们良好的体育素养。</p>
+                        <p>为期三天的秋季运动会在全校师生的热情参与下圆满结束。本次运动会共有12个项目打破校纪录，展现了学生们良好的体育素养。</p>
                     </div>
                     
                     <div class="news-item">
-                        <div class="news-date">2047年10月5日</div>
-                        <h3><a href="#">我校与大肥羊学校建立友好合作关系</a></h3>
-                        <p>经过友好协商，我校与大肥羊学校正式建立友好学校关系。双方将在师生交流、课程共建等方面开展深度合作。</p>
+                        <div class="news-date">2024年10月5日</div>
+                        <h3><a href="#">我校与明德实验学校建立友好合作关系</a></h3>
+                        <p>经过友好协商，我校与明德实验学校正式建立友好学校关系。双方将在师生交流、课程共建等方面开展深度合作。</p>
                     </div>
                     
                     <div class="news-item">
-                        <div class="news-date">2047年9月28日</div>
-                        <h3><a href="#">BDYZ举办"吃饭"文艺汇演</a></h3>
-                        <p>为庆祝食堂开门，我校举办了丰富多彩的"吃饭"文艺汇演活动，师生同台演出，展现了我校艺术教育的丰硕成果。</p>
+                        <div class="news-date">2024年9月28日</div>
+                        <h3><a href="#">BDYZ举办"国庆"文艺汇演</a></h3>
+                        <p>为庆祝国庆节，我校举办了丰富多彩的"国庆"文艺汇演活动，师生同台演出，展现了我校艺术教育的丰硕成果。</p>
                     </div>
                 </div>
                 
@@ -680,9 +836,9 @@
                     <ul class="quick-links">
                         <li><a href="#"><i class="fas fa-calendar-alt"></i> 校历安排</a></li>
                         <li><a href="#"><i class="fas fa-file-alt"></i> 招生简章</a></li>
-                        <li><a href="#"><i class="fas fa-chart-line"></i> 成绩查询</a></li>
+                        <li><a href="#" id="grade-query-link"><i class="fas fa-chart-line"></i> 成绩查询</a></li>
                         <li><a href="#"><i class="fas fa-book"></i> 数字图书馆</a></li>
-                        <li><a href="#"><i class="fas fa-user-graduate"></i> 校友会</a></li>
+                        <li><a href="#" id="alumni-link"><i class="fas fa-user-graduate"></i> 校友会</a></li>
                         <li><a href="#"><i class="fas fa-newspaper"></i> 校报在线阅读</a></li>
                     </ul>
                 </div>
@@ -701,12 +857,12 @@
             <div class="notices">
                 <div class="notice-item">
                     <span class="notice-badge important">重要</span>
-                    <span>2048年BDYZ艺术特长生招生简章发布</span>
+                    <span>2025年BDYZ艺术特长生招生简章发布</span>
                 </div>
                 
                 <div class="notice-item">
                     <span class="notice-badge general">一般</span>
-                    <span>关于2047年秋季学期期中考试安排的通知</span>
+                    <span>关于2024年秋季学期期中考试安排的通知</span>
                 </div>
                 
                 <div class="notice-item">
@@ -716,16 +872,27 @@
                 
                 <div class="notice-item">
                     <span class="notice-badge general">一般</span>
-                    <span>图书馆新书到馆通知(2047年10月)</span>
+                    <span>图书馆新书到馆通知(2024年10月)</span>
                 </div>
                 
                 <div class="notice-item">
                     <span class="notice-badge important">重要</span>
-                    <span>关于申报2048年度教育科研课题的通知</span>
+                    <span id="strange-notice">关于旧实验楼维修期间禁止进入的通知</span>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- 搜索模态框 -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>搜索结果</h2>
+            <div id="searchResults">
+                <!-- 搜索结果将在这里显示 -->
+            </div>
+        </div>
+    </div>
 
     <!-- 页脚 -->
     <footer>
@@ -739,7 +906,7 @@
                         <path d="M30 35H40" stroke="white" stroke-width="3" stroke-linecap="round"/>
                     </svg>
                     <h3>BDYZ中学</h3>
-                    <p>厚**发，追求卓越</p>
+                    <p>厚德博学，追求卓越</p>
                 </div>
                 
                 <div class="footer-links">
@@ -755,9 +922,9 @@
                 
                 <div class="footer-contact">
                     <h3>联系我们</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 地址: 宇宙BD区教育路123号</p>
-                    <p><i class="fas fa-phone-alt"></i> 电话: (010) 1234-5678</p>
-                    <p><i class="fas fa-fax"></i> 传真: (010) 1234-5679</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 地址: 北京市BD区教育路123号</p>
+                    <p><i class="fas fa-phone-alt"></i> 电话: (010) 6634-1810</p>
+                    <p><i class="fas fa-fax"></i> 传真: (010) 6634-1811</p>
                     <p><i class="fas fa-envelope"></i> 邮箱: info@bdyz.edu.cn</p>
                 </div>
             </div>
@@ -765,7 +932,7 @@
         
         <div class="copyright">
             <div class="container">
-                <p>© 2047 BDYZ中学 版权所有 | 宇宙ICP备11451419号</p>
+                <p>© 2024 BDYZ中学 版权所有 | 京ICP备202410151号</p>
                 <p>本网站建议使用Chrome、Firefox、Edge等现代浏览器访问</p>
             </div>
         </div>
@@ -788,26 +955,133 @@
             }
         });
         
-        // 当前年份更新
+        // 搜索功能
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchModal = document.getElementById('searchModal');
+        const closeModal = document.getElementById('closeModal');
+        const searchResults = document.getElementById('searchResults');
+        
+        // 搜索关键词与结果的映射
+        const searchData = {
+            "刘天清": {
+                title: "关于刘天清同学的获奖记录",
+                content: "刘天清，高二(3)班学生，在2024年全市数学竞赛中获得一等奖。该生平时学习认真，逻辑思维能力强，是数学竞赛小组的核心成员。",
+                hiddenLink: "liutianqing_details.html",
+                linkText: "查看详细档案"
+            },
+            "旧实验楼": {
+                title: "旧实验楼维修通知详情",
+                content: "因建筑结构安全问题，旧实验楼自2024年9月15日起进行全面封闭维修，预计工期6个月。维修期间，所有师生禁止进入该区域。",
+                hiddenLink: "old_lab_building.html",
+                linkText: "查看维修进展报告"
+            },
+            "成绩查询": {
+                title: "学生成绩查询系统",
+                content: "校内成绩查询系统需使用学号和身份证后六位登录。请注意，系统仅显示当前学期成绩，历史成绩需向教务处申请查询。",
+                hiddenLink: "grade_system_info.html",
+                linkText: "访问查询系统（需内网）"
+            },
+            "校友会": {
+                title: "YZ中学校友会",
+                content: "校友会成立于1995年，旨在加强校友之间的联系与合作。2024年度校友聚会原定于10月举行，但因故推迟，具体时间待定。",
+                hiddenLink: "alumni_meeting.html",
+                linkText: "查看校友会历史活动"
+            }
+        };
+        
+        // 处理搜索
+        function performSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+            let found = false;
+            
+            // 清空之前的结果
+            searchResults.innerHTML = '';
+            
+            // 检查是否有匹配的关键词
+            for (const [keyword, data] of Object.entries(searchData)) {
+                if (query.includes(keyword.toLowerCase())) {
+                    found = true;
+                    searchResults.innerHTML = `
+                        <div class="search-result">
+                            <h3>${data.title}</h3>
+                            <p>${data.content}</p>
+                            <a href="${data.hiddenLink}" class="hidden-link" target="_blank">${data.linkText}</a>
+                        </div>
+                    `;
+                    break;
+                }
+            }
+            
+            // 如果没有找到匹配项
+            if (!found) {
+                searchResults.innerHTML = `
+                    <div class="search-result">
+                        <h3>未找到相关结果</h3>
+                        <p>没有找到与"${query}"相关的内容。请尝试其他关键词，如"刘天清"、"旧实验楼"、"成绩查询"或"校友会"。</p>
+                    </div>
+                `;
+            }
+            
+            // 显示模态框
+            searchModal.style.display = 'block';
+        }
+        
+        // 搜索按钮点击事件
+        searchBtn.addEventListener('click', performSearch);
+        
+        // 按Enter键搜索
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // 关闭模态框
+        closeModal.addEventListener('click', function() {
+            searchModal.style.display = 'none';
+        });
+        
+        // 点击模态框外部关闭
+        window.addEventListener('click', function(e) {
+            if (e.target === searchModal) {
+                searchModal.style.display = 'none';
+            }
+        });
+        
+        // 页面加载完成后
         document.addEventListener('DOMContentLoaded', function() {
             // 更新版权年份
             const yearSpan = document.querySelector('.copyright p');
             if (yearSpan) {
                 const currentYear = new Date().getFullYear();
-                yearSpan.innerHTML = yearSpan.innerHTML.replace('2047', currentYear);
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2024', currentYear);
             }
             
-            // 简单新闻切换效果
-            const newsItems = document.querySelectorAll('.news-item');
-            newsItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateX(5px)';
-                    this.style.transition = 'transform 0.3s';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateX(0)';
-                });
+            // 为新闻链接添加点击事件（示例）
+            document.getElementById('liutianqing-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                searchInput.value = '刘天清';
+                performSearch();
+            });
+            
+            // 为快速链接添加点击事件（示例）
+            document.getElementById('grade-query-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                searchInput.value = '成绩查询';
+                performSearch();
+            });
+            
+            document.getElementById('alumni-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                searchInput.value = '校友会';
+                performSearch();
+            });
+            
+            // 为通知添加点击事件
+            document.getElementById('strange-notice').addEventListener('click', function() {
+                searchInput.value = '旧实验楼';
+                performSearch();
             });
         });
     </script>
