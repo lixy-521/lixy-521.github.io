@@ -93,11 +93,6 @@
             padding: 15px 0;
             background-color: rgba(255, 255, 255, 0.95);
             border-bottom: 1px solid rgba(239, 83, 80, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .search-container.hidden {
-            display: none;
         }
         
         .search-box {
@@ -692,6 +687,7 @@
             }
             
             .search-container {
+                display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -701,10 +697,6 @@
                 background-color: var(--white);
                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
                 border-top: 1px solid rgba(239, 83, 80, 0.1);
-            }
-            
-            .search-container.hidden {
-                display: none;
             }
             
             .search-container.show {
@@ -824,8 +816,8 @@
             </div>
         </div>
         
-        <!-- 搜索栏 -->
-        <div class="search-container hidden" id="searchContainer">
+        <!-- 搜索栏 - 桌面端默认显示，移动端默认隐藏 -->
+        <div class="search-container" id="searchContainer">
             <div class="container">
                 <form id="searchForm" class="search-box">
                     <input type="text" id="searchInput" class="search-input" placeholder="请输入要搜索的内容..." required>
