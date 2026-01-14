@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喜报 | 我校学子在全市数学竞赛中荣获一等奖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 0;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .article-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 微信文章头部样式 */
+        .article-header {
+            padding: 30px 20px 20px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+        }
+        
+        .school-name {
+            color: #d32f2f;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .article-title {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 15px 0 10px;
+            color: #222;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #999;
+            margin-top: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .article-date {
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .article-date i, .article-author i {
+            margin-right: 5px;
+            font-size: 13px;
+        }
+        
+        .article-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* 文章内容样式 */
+        .article-content {
+            padding: 25px 20px 40px;
+        }
+        
+        .article-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+            color: #444;
+            text-align: justify;
+        }
+        
+        .article-content p:first-of-type {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .lead {
+            font-size: 18px;
+            color: #d32f2f;
+            font-weight: 600;
+            padding-left: 10px;
+            border-left: 3px solid #d32f2f;
+            margin-bottom: 25px;
+        }
+        
+        /* 图片样式 */
+        .article-image {
+            width: 100%;
+            margin: 25px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .article-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .image-caption {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        
+        /* 获奖信息卡片 */
+        .award-card {
+            background: linear-gradient(135deg, #fff5f5, #ffebee);
+            border-left: 4px solid #d32f2f;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 3px 10px rgba(211, 47, 47, 0.08);
+        }
+        
+        .award-card h3 {
+            color: #d32f2f;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .award-info {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        
+        .award-item {
+            flex: 1 1 200px;
+            margin-bottom: 15px;
+            padding-right: 15px;
+        }
+        
+        .award-label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+        
+        .award-value {
+            font-size: 16px;
+            color: #222;
+            font-weight: 500;
+        }
+        
+        /* 引用样式 */
+        .quote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #ccc;
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .quote p:last-child {
+            text-align: right;
+            margin-top: 10px;
+            font-style: normal;
+            color: #777;
+            font-size: 15px;
+        }
+        
+        /* 相关新闻链接 */
+        .related-news {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+            border-top: 2px solid #d32f2f;
+        }
+        
+        .related-news h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        
+        .news-list {
+            list-style-type: none;
+        }
+        
+        .news-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .news-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .news-list a {
+            color: #444;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        
+        .news-list a:hover {
+            color: #d32f2f;
+        }
+        
+        .news-list i {
+            color: #d32f2f;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        
+        /* 文章底部 */
+        .article-footer {
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #f0f0f0;
+            background-color: #fafafa;
+            margin-top: 30px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .article-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .article-title {
+                font-size: 20px;
+            }
+            
+            .article-content {
+                padding: 20px 15px 30px;
+            }
+            
+            .article-content p {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .article-header {
+                padding: 20px 15px 15px;
+            }
+            
+            .article-title {
+                font-size: 18px;
+            }
+            
+            .award-info {
+                flex-direction: column;
+            }
+            
+            .award-item {
+                flex: 1 1 100%;
+                padding-right: 0;
+            }
+        }
+        
+        /* 微信特色样式 */
+        .wx-tips {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+            border-left: 3px solid #4a9eff;
+        }
+        
+        .wx-tips i {
+            color: #4a9eff;
+            margin-right: 10px;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .article-content {
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .award-card, .quote, .related-news {
+            animation: fadeIn 0.7s ease;
+        }
+        
+        /* 隐藏彩蛋 - 解谜游戏相关 */
+        .hidden-clue {
+            font-size: 0;
+            color: transparent;
+            user-select: none;
+            cursor: default;
+        }
+        
+        .hidden-clue:hover {
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="article-container">
+        <!-- 文章头部 -->
+        <header class="article-header">
+            <div class="school-name">某某区第一中学</div>
+            <h1 class="article-title">喜报！我校学子在全市中学生数学竞赛中荣获一等奖</h1>
+            <div class="article-meta">
+                <div class="article-date">
+                    <i class="far fa-calendar-alt"></i> 2024年10月15日
+                </div>
+                <div class="article-author">
+                    <i class="fas fa-user-edit"></i> 校宣传处
+                </div>
+            </div>
+        </header>
+        
+        <!-- 文章内容 -->
+        <article class="article-content">
+            <p class="lead">金秋十月，捷报频传。在刚刚结束的全市中学生数学竞赛中，我校学子再创佳绩，展现了卓越的数学素养和扎实的学科功底。</p>
+            
+            <p>10月14日，由市教育局主办的2024年全市中学生数学竞赛成绩正式揭晓。经过激烈角逐，我校高二(3)班刘天清同学凭借出色的逻辑思维能力和解题技巧，在全市众多优秀学子中脱颖而出，荣获一等奖，为学校赢得了荣誉。</p>
+            
+            <!-- 图片区域 -->
+            <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="数学竞赛颁奖现场">
+                <div class="image-caption">全市数学竞赛颁奖典礼现场（示意图）</div>
+            </div>
+            
+            <p>据悉，本次数学竞赛吸引了全市48所中学的300余名学生参加，竞赛题目难度大、综合性强，重点考察学生的数学思维能力、创新能力和解决实际问题的能力。刘天清同学在竞赛中沉着应战，发挥出色，最终以总分第二名的优异成绩获得一等奖。</p>
+            
+            <!-- 获奖信息卡片 -->
+            <div class="award-card">
+                <h3>获奖信息</h3>
+                <div class="award-info">
+                    <div class="award-item">
+                        <div class="award-label">获奖学生</div>
+                        <div class="award-value">刘天清（高二(3)班）</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-label">获奖等级</div>
+                        <div class="award-value">一等奖</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-label">指导教师</div>
+                        <div class="award-value">董新飞老师</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-label">获奖时间</div>
+                        <div class="award-value">2024年10月14日</div>
+                    </div>
+                </div>
+                <p style="margin-top: 10px; color: #666; font-size: 14px;">董新飞老师同时荣获"优秀指导教师奖"</p>
+            </div>
+            
+            <p>刘天清同学的指导老师董新飞老师表示："天清同学一直对数学有着浓厚的兴趣，他不仅天资聪颖，更重要的是学习态度端正，肯钻研、善思考。这次获奖是他长期努力的结果，也为其他同学树立了良好的榜样。"</p>
+            
+            <!-- 引用 -->
+            <div class="quote">
+                <p>"数学不仅是一门学科，更是一种思维方式。通过数学学习，我们能够培养严谨的逻辑思维能力和解决问题的能力。刘天清同学的成绩，正是我校数学教学成果的体现。"</p>
+                <p>—— 数学教研组组长 陈老师</p>
+            </div>
+            
+            <p>近年来，我校高度重视学科竞赛工作，不断完善竞赛培养机制，选拔优秀学生组成竞赛团队，配备经验丰富的指导教师，提供优质的训练资源和平台。数学教研组定期组织专题培训、模拟竞赛和经验交流活动，为学生参赛提供全方位支持。</p>
+            
+            <!-- 微信特色提示 -->
+            <div class="wx-tips">
+                <i class="fas fa-lightbulb"></i>
+                <div>本次获奖是我校连续第三年在全市数学竞赛中获得一等奖，充分体现了我校数学教学的雄厚实力和学生培养的高质量成果。</div>
+            </div>
+            
+            <p>学校领导对此次获奖表示热烈祝贺，王校长指出："刘天清同学的优异成绩，不仅是个人的荣誉，更是学校教育教学成果的体现。我们将继续坚持'以学生发展为本'的教育理念，为学生成长提供更广阔的平台和更优质的教育资源。"</p>
+            
+            <p>此次竞赛获奖，将进一步激发全校学生学习数学的热情，营造更加浓厚的学术氛围。学校将继续加大对学科竞赛的支持力度，鼓励更多学生参与各类学术竞赛，在挑战中提升自我，为学校争取更多荣誉。</p>
+            
+            <!-- 相关新闻 -->
+            <div class="related-news">
+                <h3>相关报道</h3>
+                <ul class="news-list">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>喜报 | 我校在物理竞赛中斩获三项大奖</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>学术风采 | 高二(3)班刘天清同学的学习经验分享</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>教师专访 | 董新飞：如何培养数学竞赛人才</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>竞赛指导 | 我校数学竞赛培训体系介绍</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 隐藏线索 - 解谜游戏相关 -->
+            <div class="hidden-clue">
+                档案编号：M2024-1015-STQ 状态：归档
+            </div>
+        </article>
+        
+        <!-- 文章底部 -->
+        <footer class="article-footer">
+            <p>某某区第一中学 宣传处</p>
+            <p>原文发布于2024年10月15日</p>
+            <p>阅读次数：1,258 次 | 点赞：89</p>
+            <a href="javascript:history.back()" class="back-link">
+                <i class="fas fa-arrow-left"></i> 返回学校首页
+            </a>
+        </footer>
+    </div>
+    
+    <script>
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 图片懒加载效果
+            const images = document.querySelectorAll('.article-image img');
+            images.forEach(img => {
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.5s ease';
+                
+                // 模拟图片加载
+                setTimeout(() => {
+                    img.style.opacity = '1';
+                }, 300);
+            });
+            
+            // 点赞功能模拟
+            let likeCount = 89;
+            const likeElements = document.querySelectorAll('.article-footer p');
+            likeElements[2].addEventListener('click', function() {
+                likeCount++;
+                this.innerHTML = `阅读次数：1,258 次 | 点赞：${likeCount}`;
+                
+                // 添加点赞动画
+                this.style.color = '#d32f2f';
+                this.style.transition = 'color 0.3s';
+                setTimeout(() => {
+                    this.style.color = '#999';
+                }, 500);
+            });
+            
+            // 隐藏彩蛋互动
+            const hiddenClue = document.querySelector('.hidden-clue');
+            let clickCount = 0;
+            
+            hiddenClue.addEventListener('click', function() {
+                clickCount++;
+                
+                if (clickCount === 3) {
+                    this.style.fontSize = '14px';
+                    this.style.color = '#d32f2f';
+                    this.style.backgroundColor = '#fff5f5';
+                    this.style.padding = '10px';
+                    this.style.borderRadius = '4px';
+                    this.style.cursor = 'default';
+                    this.style.userSelect = 'text';
+                    this.innerHTML = '档案编号：M2024-1015-STQ<br>状态：归档<br>备注：竞赛成绩优异，建议重点关注培养<br>关联档案：林小雨（已归档）';
+                    
+                    // 3秒后恢复原状
+                    setTimeout(() => {
+                        this.style.fontSize = '0';
+                        this.style.color = 'transparent';
+                        this.style.backgroundColor = 'transparent';
+                        this.style.padding = '0';
+                        this.innerHTML = '档案编号：M2024-1015-STQ 状态：归档';
+                        clickCount = 0;
+                    }, 3000);
+                }
+            });
+            
+            // 模拟微信阅读数增加
+            setTimeout(() => {
+                const readCountElement = document.querySelector('.article-footer p:nth-child(3)');
+                const currentText = readCountElement.textContent;
+                const newCount = Math.floor(1258 + Math.random() * 20);
+                readCountElement.textContent = currentText.replace(/1,258/, newCount.toLocaleString());
+            }, 5000);
+        });
+        
+        // 微信样式模拟：禁止选中文字（部分微信文章效果）
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // 触摸滑动效果
+        let touchStartY = 0;
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        });
+        
+        document.addEventListener('touchmove', function(e) {
+            const touchEndY = e.touches[0].clientY;
+            const diff = touchStartY - touchEndY;
+            
+            // 向下滑动时隐藏地址栏效果
+            if (diff > 50) {
+                document.body.style.paddingTop = '0';
+            }
+        });
+    </script>
+</body>
+</html>
