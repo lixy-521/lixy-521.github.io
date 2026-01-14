@@ -278,109 +278,30 @@
             animation: fadeIn 0.7s ease;
         }
         
-        /* 解谜游戏进度条 */
-        .puzzle-progress {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(211, 47, 47, 0.9);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        /* 隐藏彩蛋 - 解谜游戏相关 */
+        .hidden-clue {
+            font-size: 0;
+            color: transparent;
+            user-select: none;
+            cursor: default;
         }
         
-        .puzzle-progress:hover {
-            transform: scale(1.05);
-            background-color: rgba(211, 47, 47, 1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        .hidden-clue:hover {
+            font-size: 12px;
+            color: #999;
         }
         
-        .puzzle-progress i {
-            margin-right: 8px;
-            font-size: 18px;
-        }
-        
-        .progress-details {
-            display: none;
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            z-index: 1001;
-            width: 280px;
-            max-width: 90vw;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .progress-details.show {
-            display: block;
-        }
-        
-        .progress-details h4 {
-            color: #d32f2f;
-            margin-bottom: 15px;
-            font-size: 18px;
-            border-bottom: 2px solid #ffebee;
-            padding-bottom: 8px;
-        }
-        
-        .clue-list {
-            list-style-type: none;
-            margin-bottom: 15px;
-        }
-        
-        .clue-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .clue-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .clue-list i {
-            margin-right: 10px;
-            width: 20px;
+        /* 解谜进度小字样式 */
+        .progress-indicator {
+            font-size: 12px;
+            color: #999;
             text-align: center;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            font-family: 'Courier New', monospace;
         }
         
-        .clue-found {
-            color: #4CAF50;
-        }
-        
-        .clue-missing {
-            color: #9E9E9E;
-        }
-        
-        .progress-bar-container {
-            height: 8px;
-            background-color: #f0f0f0;
-            border-radius: 4px;
-            margin: 15px 0;
-            overflow: hidden;
-        }
-        
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #d32f2f, #ff6b6b);
-            border-radius: 4px;
-            transition: width 0.5s ease;
-        }
-        
-        /* 文章底部 - 修改以包含进度信息 */
+        /* 文章底部 */
         .article-footer {
             padding: 20px;
             text-align: center;
@@ -389,7 +310,6 @@
             border-top: 1px solid #f0f0f0;
             background-color: #fafafa;
             margin-top: 30px;
-            position: relative;
         }
         
         .back-link {
@@ -402,28 +322,6 @@
         
         .back-link:hover {
             text-decoration: underline;
-        }
-        
-        /* 互动元素 */
-        .clickable-clue {
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        .clickable-clue:hover {
-            color: #d32f2f;
-            text-decoration: underline;
-        }
-        
-        .clue-found-effect {
-            animation: pulse 0.5s ease;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
         
         /* 响应式调整 */
@@ -444,19 +342,6 @@
             .article-content p {
                 font-size: 16px;
             }
-            
-            .puzzle-progress {
-                bottom: 15px;
-                right: 15px;
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-            
-            .progress-details {
-                bottom: 70px;
-                right: 15px;
-                width: 250px;
-            }
         }
         
         @media (max-width: 480px) {
@@ -476,28 +361,6 @@
                 flex: 1 1 100%;
                 padding-right: 0;
             }
-            
-            .puzzle-progress span {
-                display: none;
-            }
-            
-            .puzzle-progress i {
-                margin-right: 0;
-                font-size: 20px;
-            }
-        }
-        
-        /* 隐藏彩蛋 - 解谜游戏相关 */
-        .hidden-clue {
-            font-size: 0;
-            color: transparent;
-            user-select: none;
-            cursor: default;
-        }
-        
-        .hidden-clue:hover {
-            font-size: 12px;
-            color: #999;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -522,7 +385,7 @@
         <article class="article-content">
             <p class="lead">金秋十月，捷报频传。在刚刚结束的全市中学生数学竞赛中，我校学子再创佳绩，展现了卓越的数学素养和扎实的学科功底。</p>
             
-            <p>10月14日，由市教育局主办的2024年全市中学生数学竞赛成绩正式揭晓。经过激烈角逐，我校高二(3)班<span class="clickable-clue" data-clue="student_name">刘天清</span>同学凭借出色的逻辑思维能力和解题技巧，在全市众多优秀学子中脱颖而出，荣获一等奖，为学校赢得了荣誉。</p>
+            <p>10月14日，由市教育局主办的2024年全市中学生数学竞赛成绩正式揭晓。经过激烈角逐，我校高二(3)班同学刘天清凭借出色的逻辑思维能力和解题技巧，在全市众多优秀学子中脱颖而出，荣获一等奖，为学校赢得了荣誉。</p>
             
             <!-- 图片区域 -->
             <div class="article-image">
@@ -530,7 +393,7 @@
                 <div class="image-caption">全市数学竞赛颁奖典礼现场（示意图）</div>
             </div>
             
-            <p>据悉，本次数学竞赛吸引了全市48所中学的300余名学生参加，竞赛题目难度大、综合性强，重点考察学生的数学思维能力、创新能力和解决实际问题的能力。<span class="clickable-clue" data-clue="student_performance">刘天清同学</span>在竞赛中沉着应战，发挥出色，最终以总分第二名的优异成绩获得一等奖。</p>
+            <p>据悉，本次数学竞赛吸引了全市48所中学的300余名学生参加，竞赛题目难度大、综合性强，重点考察学生的数学思维能力、创新能力和解决实际问题的能力。刘天清同学在竞赛中沉着应战，发挥出色，最终以总分第二名的优异成绩获得一等奖。</p>
             
             <!-- 获奖信息卡片 -->
             <div class="award-card">
@@ -538,7 +401,7 @@
                 <div class="award-info">
                     <div class="award-item">
                         <div class="award-label">获奖学生</div>
-                        <div class="award-value clickable-clue" data-clue="student_details">刘天清（高二(3)班）</div>
+                        <div class="award-value">刘天清（高二(3)班）</div>
                     </div>
                     <div class="award-item">
                         <div class="award-label">获奖等级</div>
@@ -546,7 +409,7 @@
                     </div>
                     <div class="award-item">
                         <div class="award-label">指导教师</div>
-                        <div class="award-value clickable-clue" data-clue="teacher_info">董新飞老师</div>
+                        <div class="award-value">董新飞老师</div>
                     </div>
                     <div class="award-item">
                         <div class="award-label">获奖时间</div>
@@ -556,7 +419,7 @@
                 <p style="margin-top: 10px; color: #666; font-size: 14px;">董新飞老师同时荣获"优秀指导教师奖"</p>
             </div>
             
-            <p>刘天清同学的指导老师<span class="clickable-clue" data-clue="teacher_comment">董新飞老师</span>表示："天清同学一直对数学有着浓厚的兴趣，他不仅天资聪颖，更重要的是学习态度端正，肯钻研、善思考。这次获奖是他长期努力的结果，也为其他同学树立了良好的榜样。"</p>
+            <p>刘天清同学的指导老师董新飞老师表示："天清同学一直对数学有着浓厚的兴趣，他不仅天资聪颖，更重要的是学习态度端正，肯钻研、善思考。这次获奖是他长期努力的结果，也为其他同学树立了良好的榜样。"</p>
             
             <!-- 引用 -->
             <div class="quote">
@@ -581,15 +444,15 @@
                 <h3>相关报道</h3>
                 <ul class="news-list">
                     <li>
-                        <a href="#" class="clickable-clue" data-clue="related_news">
+                        <a href="#">
                             <i class="fas fa-chevron-right"></i>
-                            <span>学术风采 | 高二(3)班刘天清同学的学习经验分享</span>
+                            <span>喜报 | 我校在物理竞赛中斩获三项大奖</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <i class="fas fa-chevron-right"></i>
-                            <span>喜报 | 我校在物理竞赛中斩获三项大奖</span>
+                            <span>学术风采 | 高二(3)班刘天清同学的学习经验分享</span>
                         </a>
                     </li>
                     <li>
@@ -608,7 +471,7 @@
             </div>
             
             <!-- 隐藏线索 - 解谜游戏相关 -->
-            <div class="hidden-clue" id="hiddenClue">
+            <div class="hidden-clue">
                 档案编号：M2024-1015-STQ 状态：归档
             </div>
         </article>
@@ -618,249 +481,21 @@
             <p>某某区第一中学 宣传处</p>
             <p>原文发布于2024年10月15日</p>
             <p>阅读次数：<span id="readCount">1,258</span> 次 | 点赞：<span id="likeCount">89</span></p>
+            
+            <!-- 解谜进度显示 -->
+            <div class="progress-indicator">
+                2/7
+            </div>
+            
             <a href="javascript:history.back()" class="back-link">
                 <i class="fas fa-arrow-left"></i> 返回学校首页
             </a>
-            
-            <!-- 解谜进度信息 -->
-            <div style="margin-top: 20px; font-size: 13px; color: #777;">
-                <p>提示：文章中包含隐藏线索，点击高亮文字可收集线索</p>
-            </div>
         </footer>
     </div>
     
-    <!-- 解谜进度浮动按钮 -->
-    <div class="puzzle-progress" id="puzzleProgress">
-        <i class="fas fa-search"></i>
-        <span>解谜进度: <span id="progressText">2/7</span></span>
-    </div>
-    
-    <!-- 进度详情面板 -->
-    <div class="progress-details" id="progressDetails">
-        <h4><i class="fas fa-clipboard-list"></i> 线索收集进度</h4>
-        
-        <div class="progress-bar-container">
-            <div class="progress-bar" id="progressBar" style="width: 28.57%;"></div>
-        </div>
-        
-        <div style="text-align: center; margin-bottom: 15px; font-weight: 600;">
-            <span id="progressPercent">28.57%</span> 完成
-        </div>
-        
-        <ul class="clue-list">
-            <li>
-                <i class="fas fa-user-graduate clue-found"></i>
-                <span>学生姓名线索</span>
-            </li>
-            <li>
-                <i class="fas fa-trophy clue-found"></i>
-                <span>获奖表现线索</span>
-            </li>
-            <li>
-                <i class="fas fa-user-tie clue-missing"></i>
-                <span>教师信息线索</span>
-            </li>
-            <li>
-                <i class="fas fa-id-card clue-missing"></i>
-                <span>学生详细信息</span>
-            </li>
-            <li>
-                <i class="fas fa-comment clue-missing"></i>
-                <span>教师评论线索</span>
-            </li>
-            <li>
-                <i class="fas fa-newspaper clue-missing"></i>
-                <span>相关报道线索</span>
-            </li>
-            <li>
-                <i class="fas fa-file-alt clue-missing"></i>
-                <span>隐藏档案线索</span>
-            </li>
-        </ul>
-        
-        <div style="font-size: 12px; color: #666; text-align: center; margin-top: 15px;">
-            <i class="fas fa-lightbulb"></i> 已发现 <span id="foundCount">2</span> 个线索，还需 <span id="remainingCount">5</span> 个
-        </div>
-    </div>
-    
     <script>
-        // 解谜游戏状态管理
-        const GameState = {
-            clues: {
-                student_name: false,
-                student_performance: false,
-                teacher_info: false,
-                student_details: false,
-                teacher_comment: false,
-                related_news: false,
-                hidden_archive: false
-            },
-            totalClues: 7,
-            
-            // 初始化游戏状态
-            init: function() {
-                // 从localStorage加载已发现的线索
-                const savedClues = localStorage.getItem('puzzle_clues');
-                if (savedClues) {
-                    this.clues = JSON.parse(savedClues);
-                }
-                
-                // 更新进度显示
-                this.updateProgress();
-            },
-            
-            // 发现线索
-            findClue: function(clueId) {
-                if (!this.clues[clueId]) {
-                    this.clues[clueId] = true;
-                    this.saveProgress();
-                    this.updateProgress();
-                    this.showClueFoundMessage(clueId);
-                    return true;
-                }
-                return false;
-            },
-            
-            // 保存进度到localStorage
-            saveProgress: function() {
-                localStorage.setItem('puzzle_clues', JSON.stringify(this.clues));
-            },
-            
-            // 计算已发现的线索数量
-            getFoundCount: function() {
-                return Object.values(this.clues).filter(Boolean).length;
-            },
-            
-            // 计算进度百分比
-            getProgressPercentage: function() {
-                return Math.round((this.getFoundCount() / this.totalClues) * 10000) / 100;
-            },
-            
-            // 更新进度显示
-            updateProgress: function() {
-                const foundCount = this.getFoundCount();
-                const percentage = this.getProgressPercentage();
-                
-                // 更新进度文本
-                document.getElementById('progressText').textContent = `${foundCount}/${this.totalClues}`;
-                document.getElementById('progressPercent').textContent = `${percentage}%`;
-                document.getElementById('foundCount').textContent = foundCount;
-                document.getElementById('remainingCount').textContent = this.totalClues - foundCount;
-                
-                // 更新进度条
-                document.getElementById('progressBar').style.width = `${percentage}%`;
-                
-                // 更新线索列表显示
-                this.updateClueList();
-                
-                // 如果所有线索都找到了，显示特殊效果
-                if (foundCount === this.totalClues) {
-                    this.showCompletionEffect();
-                }
-            },
-            
-            // 更新线索列表显示
-            updateClueList: function() {
-                const clueItems = document.querySelectorAll('.clue-list li');
-                const clueIds = [
-                    'student_name',
-                    'student_performance',
-                    'teacher_info',
-                    'student_details',
-                    'teacher_comment',
-                    'related_news',
-                    'hidden_archive'
-                ];
-                
-                clueItems.forEach((item, index) => {
-                    const icon = item.querySelector('i');
-                    const clueId = clueIds[index];
-                    
-                    if (this.clues[clueId]) {
-                        icon.className = 'fas fa-check-circle clue-found';
-                    } else {
-                        icon.className = 'fas fa-circle clue-missing';
-                    }
-                });
-            },
-            
-            // 显示线索发现消息
-            showClueFoundMessage: function(clueId) {
-                const clueNames = {
-                    student_name: '学生姓名线索',
-                    student_performance: '获奖表现线索',
-                    teacher_info: '教师信息线索',
-                    student_details: '学生详细信息',
-                    teacher_comment: '教师评论线索',
-                    related_news: '相关报道线索',
-                    hidden_archive: '隐藏档案线索'
-                };
-                
-                // 创建临时消息
-                const message = document.createElement('div');
-                message.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background-color: #4CAF50;
-                    color: white;
-                    padding: 15px 20px;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-                    z-index: 1002;
-                    animation: fadeIn 0.3s ease;
-                    font-weight: 600;
-                `;
-                message.innerHTML = `
-                    <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
-                    已发现线索: ${clueNames[clueId]}
-                `;
-                
-                document.body.appendChild(message);
-                
-                // 3秒后移除消息
-                setTimeout(() => {
-                    message.style.animation = 'fadeOut 0.5s ease';
-                    setTimeout(() => {
-                        if (message.parentNode) {
-                            message.parentNode.removeChild(message);
-                        }
-                    }, 500);
-                }, 3000);
-                
-                // 添加CSS动画
-                if (!document.querySelector('#fadeOutAnimation')) {
-                    const style = document.createElement('style');
-                    style.id = 'fadeOutAnimation';
-                    style.textContent = `
-                        @keyframes fadeOut {
-                            from { opacity: 1; transform: translateX(0); }
-                            to { opacity: 0; transform: translateX(100px); }
-                        }
-                    `;
-                    document.head.appendChild(style);
-                }
-            },
-            
-            // 显示完成效果
-            showCompletionEffect: function() {
-                // 更新进度按钮样式
-                const progressBtn = document.getElementById('puzzleProgress');
-                progressBtn.style.backgroundColor = '#4CAF50';
-                progressBtn.innerHTML = '<i class="fas fa-trophy"></i><span>解谜完成!</span>';
-                
-                // 显示庆祝消息
-                setTimeout(() => {
-                    alert('🎉 恭喜！您已发现所有线索！\n\n现在您可以返回主页面继续调查。');
-                }, 1000);
-            }
-        };
-        
         // 页面加载动画
         document.addEventListener('DOMContentLoaded', function() {
-            // 初始化游戏状态
-            GameState.init();
-            
             // 图片懒加载效果
             const images = document.querySelectorAll('.article-image img');
             images.forEach(img => {
@@ -887,28 +522,6 @@
                 }, 500);
             });
             
-            // 阅读数模拟
-            setTimeout(() => {
-                const readCountElement = document.getElementById('readCount');
-                const newCount = Math.floor(1258 + Math.random() * 20);
-                readCountElement.textContent = newCount.toLocaleString();
-            }, 5000);
-            
-            // 为所有可点击线索添加事件
-            const clickableClues = document.querySelectorAll('.clickable-clue');
-            clickableClues.forEach(clue => {
-                clue.addEventListener('click', function() {
-                    const clueId = this.getAttribute('data-clue');
-                    if (clueId && GameState.findClue(clueId)) {
-                        // 添加点击效果
-                        this.classList.add('clue-found-effect');
-                        setTimeout(() => {
-                            this.classList.remove('clue-found-effect');
-                        }, 500);
-                    }
-                });
-            });
-            
             // 隐藏彩蛋互动
             const hiddenClue = document.querySelector('.hidden-clue');
             let clickCount = 0;
@@ -917,9 +530,6 @@
                 clickCount++;
                 
                 if (clickCount === 3) {
-                    // 发现隐藏档案线索
-                    GameState.findClue('hidden_archive');
-                    
                     this.style.fontSize = '14px';
                     this.style.color = '#d32f2f';
                     this.style.backgroundColor = '#fff5f5';
@@ -940,20 +550,13 @@
                     }, 3000);
                 }
             });
-        });
-        
-        // 进度按钮点击事件
-        document.getElementById('puzzleProgress').addEventListener('click', function() {
-            const detailsPanel = document.getElementById('progressDetails');
-            detailsPanel.classList.toggle('show');
             
-            // 点击外部关闭面板
-            document.addEventListener('click', function closePanel(e) {
-                if (!detailsPanel.contains(e.target) && e.target.id !== 'puzzleProgress') {
-                    detailsPanel.classList.remove('show');
-                    document.removeEventListener('click', closePanel);
-                }
-            });
+            // 模拟微信阅读数增加
+            setTimeout(() => {
+                const readCountElement = document.getElementById('readCount');
+                const newCount = Math.floor(1258 + Math.random() * 20);
+                readCountElement.textContent = newCount.toLocaleString();
+            }, 5000);
         });
         
         // 微信样式模拟：禁止选中文字（部分微信文章效果）
