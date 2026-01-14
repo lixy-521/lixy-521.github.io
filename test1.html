@@ -280,6 +280,16 @@
             font-weight: 600;
         }
         
+        /* 解谜进度小字样式 */
+        .progress-indicator {
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            font-family: 'Courier New', monospace;
+        }
+        
         /* 页脚样式 */
         .page-footer {
             background-color: var(--dark-red);
@@ -396,8 +406,8 @@
                 
                 <div class="info-card">
                     <h3><i class="fas fa-user-tie"></i> 领导班子</h3>
-                    <p><span class="highlight">校长：</span>李建东</p>
-                    <p><span class="highlight">党委书记：</span>郭树超</p>
+                    <p><span class="highlight">校长：</span>李建国（化名）</p>
+                    <p><span class="highlight">党委书记：</span>郭志远（化名）</p>
                     <p>办学理念：<span class="highlight">"以人为本，为学生终身发展奠基；科研兴校，为教师专业成长服务"</span></p>
                 </div>
             </div>
@@ -426,6 +436,13 @@
                     <div class="timeline-content">
                         <div class="timeline-year">1950年</div>
                         <p>确定为省重点中学，开始规模化发展。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1998年</div>
+                        <p>旧实验楼拆除，在原址上建设新的科学实验中心。</p>
                     </div>
                 </div>
                 
@@ -507,7 +524,7 @@
             <div class="honors-list">
                 <div class="honor-item">
                     <div class="honor-year">2024年</div>
-                    <p>6名学生获全国中学生奥林匹克竞赛一等奖，其中2人进入国家集训队。</p>
+                    <p>在<span class="highlight">全市数学竞赛</span>中，高二学生<span class="highlight">刘天清</span>（化名）荣获一等奖，指导教师<span class="highlight">董新飞</span>（化名）获优秀指导教师奖。</p>
                 </div>
                 
                 <div class="honor-item">
@@ -527,7 +544,7 @@
                 
                 <div class="honor-item">
                     <div class="honor-year">2020年</div>
-                    <p>学生合唱团入选省级优秀学生艺术团。</p>
+                    <p>学生<span class="highlight">林小雨</span>（化名）在全国作文大赛中获特等奖。</p>
                 </div>
                 
                 <div class="honor-item">
@@ -542,7 +559,7 @@
             <h2 class="section-title"><i class="fas fa-user-friends"></i> 知名校友</h2>
             
             <div class="info-card">
-                <h3><i class="fas fa-user-graduate"></i> 张金松 校友</h3>
+                <h3><i class="fas fa-user-graduate"></i> 章进松 校友（化名）</h3>
                 <p><span class="highlight">成就：</span>量子反常霍尔效应发现者之一，国际著名物理学家。</p>
                 <p><span class="highlight">毕业年份：</span>1998年</p>
                 <p><span class="highlight">现职：</span>清华大学物理系教授，中国科学院院士</p>
@@ -579,6 +596,11 @@
                 <a href="#">教育教学</a>
                 <a href="#">招生信息</a>
                 <a href="#">联系我们</a>
+            </div>
+            
+            <!-- 解谜进度显示 -->
+            <div class="progress-indicator" style="color: rgba(255, 255, 255, 0.7);">
+                2/7
             </div>
             
             <div class="copyright">
