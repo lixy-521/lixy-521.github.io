@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教育教学 - 某某区第一中学</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* 与首页保持一致的核心样式（精简版） */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        :root {
+            --primary-red: #ef5350;
+            --dark-red: #d32f2f;
+            --light-red: #ffebee;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #fff;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            box-shadow: 0 2px 15px rgba(239,83,80,.1);
+        }
+
+        .main-header {
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg,var(--primary-red),var(--dark-red));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        nav ul li a.active {
+            color: var(--primary-red);
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 5px;
+        }
+
+        /* 横幅 */
+        .banner {
+            background: linear-gradient(rgba(239,83,80,.85),rgba(211,47,47,.85)),
+            url("https://images.unsplash.com/photo-1509062522246-3755977927d7");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* 通用区块 */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            color: var(--dark-red);
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* 卡片布局 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(239,83,80,.1);
+            padding: 30px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-red);
+        }
+
+        .card p {
+            color: var(--text-light);
+        }
+
+        footer {
+            background: linear-gradient(135deg,var(--dark-red),#b71c1c);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container main-header">
+        <div class="logo"><i class="fas fa-school"></i></div>
+        <h2>某某区第一中学</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="test1.html">学校概况</a></li>
+                <li><a href="jiaoyujiaxue.html" class="active">教育教学</a></li>
+                <li><a href="#">师资队伍</a></li>
+                <li><a href="#">校园生活</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- 横幅 -->
+<div class="banner">
+    <h1>教育教学</h1>
+    <p>坚持立德树人，深化课程改革，构建高质量育人体系</p>
+</div>
+
+<!-- 教育理念 -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>教育理念</h2>
+            <p>以学生发展为中心，促进全面而有个性的发展</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-heart"></i>
+                <h3>立德树人</h3>
+                <p>坚持德育为先，把思想政治教育贯穿教育教学全过程，培养学生健全人格。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>因材施教</h3>
+                <p>尊重学生差异，实施分层教学和个性化指导，激发学习潜能。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h3>面向未来</h3>
+                <p>注重核心素养培养，提升学生创新精神与实践能力。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 课程体系 -->
+<section style="background: var(--light-red);">
+    <div class="container">
+        <div class="section-title">
+            <h2>课程体系</h2>
+            <p>构建“基础 + 拓展 + 特色”的多元课程结构</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-book"></i>
+                <h3>国家课程</h3>
+                <p>严格落实国家课程标准，夯实学生学科基础。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-flask"></i>
+                <h3>校本课程</h3>
+                <p>开发科技、人文、艺术等校本课程，丰富学习体验。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>特色课程</h3>
+                <p>开设书法、编程、科学探究等特色课程，促进多元发展。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 教学研究 -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>教学研究与成果</h2>
+            <p>以研促教、以教促学，持续提升教学质量</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>课堂改革</h3>
+                <p>推进“自主、合作、探究”课堂教学模式，提高学习效率。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-award"></i>
+                <h3>教研成果</h3>
+                <p>多项课题获省市级立项，教师论文多次获奖。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>教学质量</h3>
+                <p>高考成绩稳居全区前列，学生综合素质显著提升。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 某某区第一中学 版权所有</p>
+</footer>
+
+</body>
+</html>
