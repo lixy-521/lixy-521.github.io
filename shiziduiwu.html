@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>师资队伍 - 某某区第一中学</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI","Microsoft YaHei",sans-serif;
+        }
+
+        :root {
+            --primary-red:#ef5350;
+            --dark-red:#d32f2f;
+            --light-red:#ffebee;
+            --text-dark:#333;
+            --text-light:#666;
+            --white:#fff;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* 头部 */
+        header {
+            box-shadow: 0 2px 15px rgba(239,83,80,.1);
+        }
+
+        .main-header {
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg,var(--primary-red),var(--dark-red));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        nav ul li a.active {
+            color: var(--primary-red);
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 5px;
+        }
+
+        /* 横幅 */
+        .banner {
+            background: linear-gradient(rgba(239,83,80,.85),rgba(211,47,47,.85)),
+            url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        /* 通用区块 */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--dark-red);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* 卡片 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(239,83,80,.1);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--dark-red);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-light);
+        }
+
+        footer {
+            background: linear-gradient(135deg,var(--dark-red),#b71c1c);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container main-header">
+        <div class="logo"><i class="fas fa-school"></i></div>
+        <h2>某某区第一中学</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="test1.html">学校概况</a></li>
+                <li><a href="jiaoyujiaxue.html">教育教学</a></li>
+                <li><a href="shiziduiwu.html" class="active">师资队伍</a></li>
+                <li><a href="#">校园生活</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- 横幅 -->
+<div class="banner">
+    <h1>师资队伍</h1>
+    <p>以高素质教师队伍，支撑学校高质量发展</p>
+</div>
+
+<!-- 师资理念 -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>师资建设理念</h2>
+            <p>打造一支师德高尚、业务精湛、结构合理的教师队伍</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-heart"></i>
+                <h3>师德为先</h3>
+                <p>坚持立德树人，把师德师风作为教师队伍建设的首要标准。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-book-reader"></i>
+                <h3>能力为本</h3>
+                <p>注重教师专业素养提升，持续推进课堂教学改革。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>协同发展</h3>
+                <p>实施“青蓝工程”“名师引领”，促进教师梯队成长。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 队伍结构 -->
+<section style="background: var(--light-red);">
+    <div class="container">
+        <div class="section-title">
+            <h2>教师队伍结构</h2>
+            <p>学历层次高、专业分布合理、年龄结构科学</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-user-graduate"></i>
+                <h3>学历结构</h3>
+                <p>硕士研究生及以上学历教师占比80%以上。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-award"></i>
+                <h3>职称结构</h3>
+                <p>高级职称教师占比65%，多名特级教师、省市骨干教师。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-balance-scale"></i>
+                <h3>年龄结构</h3>
+                <p>老中青结合，经验传承与创新活力并重。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 名师骨干 -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>名师与骨干教师</h2>
+            <p>发挥示范引领作用，推动整体教学水平提升</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>特级教师</h3>
+                <p>多名教师获评省级特级教师，教学成果显著。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <h3>学科带头人</h3>
+                <p>各学科均配备市、区级学科带头人。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-medal"></i>
+                <h3>骨干教师</h3>
+                <p>骨干教师在教学、科研、竞赛中发挥中坚力量。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 教师发展 -->
+<section style="background: var(--light-red);">
+    <div class="container">
+        <div class="section-title">
+            <h2>教师专业发展</h2>
+            <p>以研促教，以训促能，推动教师持续成长</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>教学研究</h3>
+                <p>积极开展课题研究，提升教育科研水平。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-trophy"></i>
+                <h3>成果荣誉</h3>
+                <p>教师在各级教学竞赛中屡获佳绩。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-sync-alt"></i>
+                <h3>继续教育</h3>
+                <p>常态化开展校本培训与外出研修。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 某某区第一中学 版权所有</p>
+</footer>
+
+</body>
+</html>
