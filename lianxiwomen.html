@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>联系我们 - 某某区第一中学</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI","Microsoft YaHei",sans-serif;
+        }
+
+        :root {
+            --primary-red:#ef5350;
+            --dark-red:#d32f2f;
+            --light-red:#ffebee;
+            --text-dark:#333;
+            --text-light:#666;
+            --white:#fff;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* 头部 */
+        header {
+            box-shadow: 0 2px 15px rgba(239,83,80,.1);
+        }
+
+        .main-header {
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg,var(--primary-red),var(--dark-red));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        nav ul li a.active {
+            color: var(--primary-red);
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 5px;
+        }
+
+        /* 横幅 */
+        .banner {
+            background: linear-gradient(rgba(239,83,80,.88),rgba(211,47,47,.88)),
+            url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            max-width: 760px;
+            margin: auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--dark-red);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(239,83,80,.1);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--dark-red);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-light);
+        }
+
+        footer {
+            background: linear-gradient(135deg,var(--dark-red),#b71c1c);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container main-header">
+        <div class="logo"><i class="fas fa-school"></i></div>
+        <h2>某某区第一中学</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="test1.html">学校概况</a></li>
+                <li><a href="jiaoyujiaxue.html">教育教学</a></li>
+                <li><a href="shiziduiwu.html">师资队伍</a></li>
+                <li><a href="xiaoyuanshenghuo.html">校园生活</a></li>
+                <li><a href="zhaoshengxinxi.html">招生信息</a></li>
+                <li><a href="lianxiwomen.html" class="active">联系我们</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- 横幅 -->
+<div class="banner">
+    <h1>联系我们</h1>
+    <p>欢迎社会各界与家长朋友与我们取得联系</p>
+</div>
+
+<!-- 基本联系方式 -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>学校联系方式</h2>
+            <p>我们期待与您的沟通交流</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-phone"></i>
+                <h3>联系电话</h3>
+                <p>办公室：010-xxxxxxx<br>传真：010-xxxxxxx</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-envelope"></i>
+                <h3>电子邮箱</h3>
+                <p>office@school.edu.cn</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>学校地址</h3>
+                <p>某某市某某区某某路 XX 号</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 部门联系 -->
+<section style="background: var(--light-red);">
+    <div class="container">
+        <div class="section-title">
+            <h2>部门与事务联系</h2>
+            <p>针对不同事务，请联系相应部门</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-user-graduate"></i>
+                <h3>招生咨询</h3>
+                <p>招生办公室<br>电话：010-xxxxxxx</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>教学事务</h3>
+                <p>教务处<br>电话：010-xxxxxxx</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>学生管理</h3>
+                <p>德育处 / 学生处<br>电话：010-xxxxxxx</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 交通指引 -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>到校方式</h2>
+            <p>欢迎来校参观与咨询</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-bus"></i>
+                <h3>公共交通</h3>
+                <p>乘坐 XX 路、XX 路公交车至“某某中学站”下车。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-car"></i>
+                <h3>自驾路线</h3>
+                <p>导航搜索“某某区第一中学”，按导航指引到达。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-clock"></i>
+                <h3>来访时间</h3>
+                <p>工作日 8:30 – 17:00<br>节假日请提前联系</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 温馨提示 -->
+<section style="background: var(--light-red);">
+    <div class="container">
+        <div class="section-title">
+            <h2>温馨提示</h2>
+            <p>感谢您的理解与配合</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-info-circle"></i>
+                <h3>来校登记</h3>
+                <p>来访人员请在门卫处登记并按指引进入校园。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>校园安全</h3>
+                <p>请遵守校园管理规定，注意人身与财产安全。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-smile"></i>
+                <h3>文明来访</h3>
+                <p>感谢您对学校工作的支持与理解。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 某某区第一中学 版权所有</p>
+</footer>
+
+</body>
+</html>
