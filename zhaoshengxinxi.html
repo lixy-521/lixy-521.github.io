@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>校园生活 - 某某区第一中学</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI","Microsoft YaHei",sans-serif;
+        }
+
+        :root {
+            --primary-red:#ef5350;
+            --dark-red:#d32f2f;
+            --light-red:#ffebee;
+            --text-dark:#333;
+            --text-light:#666;
+            --white:#fff;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* 头部 */
+        header {
+            box-shadow: 0 2px 15px rgba(239,83,80,.1);
+        }
+
+        .main-header {
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg,var(--primary-red),var(--dark-red));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        nav ul li a.active {
+            color: var(--primary-red);
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 5px;
+        }
+
+        /* 横幅 */
+        .banner {
+            background: linear-gradient(rgba(239,83,80,.85),rgba(211,47,47,.85)),
+            url("https://images.unsplash.com/photo-1509062522246-3755977927d7");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            max-width: 760px;
+            margin: auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--dark-red);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(239,83,80,.1);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--dark-red);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-light);
+        }
+
+        footer {
+            background: linear-gradient(135deg,var(--dark-red),#b71c1c);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container main-header">
+        <div class="logo"><i class="fas fa-school"></i></div>
+        <h2>某某区第一中学</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="test1.html">学校概况</a></li>
+                <li><a href="jiaoyujiaxue.html">教育教学</a></li>
+                <li><a href="shiziduiwu.html">师资队伍</a></li>
+                <li><a href="xiaoyuanshenghuo.html" class="active">校园生活</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- 横幅 -->
+<div class="banner">
+    <h1>校园生活</h1>
+    <p>在丰富多彩的校园生活中，促进学生全面而有个性的发展</p>
+</div>
+
+<!-- 德育活动 -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>德育活动</h2>
+            <p>立德树人，润物无声</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-flag"></i>
+                <h3>主题教育</h3>
+                <p>常态化开展爱国主义、理想信念、文明礼仪等主题教育活动。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>实践活动</h3>
+                <p>组织社会实践、志愿服务，引导学生在实践中成长。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-user-shield"></i>
+                <h3>行为规范</h3>
+                <p>强化学生日常行为规范管理，营造良好育人环境。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 社团活动 -->
+<section style="background: var(--light-red);">
+    <div class="container">
+        <div class="section-title">
+            <h2>学生社团</h2>
+            <p>多元发展，张扬个性</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-music"></i>
+                <h3>文艺类社团</h3>
+                <p>合唱、舞蹈、器乐等社团丰富学生艺术体验。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-flask"></i>
+                <h3>科技类社团</h3>
+                <p>科技创新、编程、实验探究，激发学生科学兴趣。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-pen-nib"></i>
+                <h3>人文类社团</h3>
+                <p>文学、书法、演讲等社团提升人文素养。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 体育艺术 -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>体育与艺术</h2>
+            <p>强健体魄，涵养审美</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-running"></i>
+                <h3>阳光体育</h3>
+                <p>落实每天体育锻炼，促进学生身心健康。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-basketball-ball"></i>
+                <h3>体育赛事</h3>
+                <p>举办运动会、联赛，培养团队精神。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-palette"></i>
+                <h3>艺术活动</h3>
+                <p>开展艺术节、展演活动，展示学生风采。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 校园文化 -->
+<section style="background: var(--light-red);">
+    <div class="container">
+        <div class="section-title">
+            <h2>校园文化与管理</h2>
+            <p>环境育人，文化润心</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-school"></i>
+                <h3>校园文化建设</h3>
+                <p>营造文明、整洁、富有文化内涵的校园环境。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-book"></i>
+                <h3>书香校园</h3>
+                <p>推进阅读活动，让阅读成为校园生活的重要组成部分。</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>安全管理</h3>
+                <p>完善校园安全制度，保障学生健康成长。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 某某区第一中学 版权所有</p>
+</footer>
+
+</body>
+</html>
